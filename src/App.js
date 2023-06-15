@@ -15,7 +15,7 @@ function App() {
   }, [setAppMenuVisible]);
   return (
     <div>
-      {"@cismet-collab/ais-generic-texts@" +
+      {"@cismet-collab/ais-emsdetten-texts@" +
         getLibVersion() +
         (isDirty()
           ? " (dirty: release before usage[" + getLibDescribe() + "])"
