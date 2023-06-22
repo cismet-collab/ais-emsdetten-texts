@@ -15,13 +15,9 @@ const Component = ({ email }) => {
       sectionContent={
         <div>
           <p>
-            Für telefonische Auskünfte zum Umgang mit dem Auskunfts- und
+            Für Auskünfte zum Umgang mit dem Auskunfts- und
             Informationssystem Starkregen (AIS) stehen Ihnen die
-            Mitarbeiterinnen und Mitarbeiter der cismet GmbH zur Verfügung.
-          </p>
-          <p>
-            Weitere Informationen zum Thema „Schutz vor Starkregen“ finden Sie
-            auf der Homepage der Dr. Pecher AG.
+            Mitarbeiterinnen und Mitarbeiter der Stadt Emsdetten zur Verfügung.
           </p>
 
           <p style={{ display: "flex" }}>
