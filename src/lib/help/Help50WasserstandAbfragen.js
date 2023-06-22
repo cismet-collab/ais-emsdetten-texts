@@ -16,17 +16,41 @@ const Component = () => {
       sectionContent={
         <div>
           <p>
-            Durch Anklicken der Schaltfläche <Icon name="crosshairs" /> oberhalb
-            des Kontrollfeldes aktivieren Sie abhängig von der eingestellten
-            Kartenansicht (Wassertiefen vs. Fließgeschwindigkeiten) den Modus
-            zur Abfrage der maximalen Werte. Dabei können die Wassertiefe und
-            die Fließgeschwindigkeit abgefragt werden. Die Maximalwerte sind im
-            Verlauf jeder Simulation für jede 1x1 m Rasterzelle berechnet
-            worden. Anstelle der Schaltfläche erscheint in diesem Modus das
-            Anzeigefeld "Maximale Wassertiefe" bzw. "Maximale
-            Fließgeschwindigkeit" zunächst mit einem kurzen Bedienungshinweis.
+          Am oberen Rand des Kontrollfeldes befindet sich eine platzsparende Legende, mit der 
+          die zur Klassifizierung der maximalen simulierten Wassertiefen bzw. Fließgeschwindigkeiten 
+          verwendeten Farben erläutert werden: 
           </p>
           <p>
+            <strong>Eckwerte der Visualisierung für die Wassertiefen</strong>
+          </p>
+            <ul>
+              <li> &lt; 5 cm (transparente bzw. keine Darstellung),</li>
+              <li> 20 cm (hellblau),</li>
+              <li> 40 cm (blau),</li>
+              <li> 75 cm (dunkelblau) und</li>
+              <li> &gt; 100 cm (violett).</li>
+            </ul>
+          <p>
+              <strong>Eckwerte der Visualisierung für die Fließgeschwindigkeiten</strong>
+          </p>
+            <ul>
+              <li> &lt; 0,1 m/s (transparente bzw. keine Darstellung),</li>
+              <li> 0,1 m/s (gelb),</li>
+              <li> 0,3 m/s (hellorange),</li>
+              <li> 0,5 m/s (orange) und</li>
+              <li> &gt; 1 m/s (dunkelorange).</li>
+            </ul>
+          <p>
+          Je nach Regen und Randbedingungen in der Realität können in Teilgebieten die Wassertiefen auf dem Gelände höher oder geringer ausfallen.
+          Um diese Variationen zu verstehen und besser einschätzen zu können, sind zwei unterschiedliche Szenarien dargestellt.
+          </p>
+          <p>
+            Durch Anklicken der Schaltfläche <Icon name="crosshairs" /> oberhalb
+            des Kontrollfeldes aktivieren Sie abhängig von der eingestellten
+            Kartenansicht (Wassertiefen oder Fließgeschwindigkeiten) den Modus
+            zur <strong>Abfrage der maximalen Werte im Simulationszeitrahmen</strong>.
+            Die Maximalwerte sind im Verlauf jeder Simulation für jede Zelle des Rechennetzes
+            berechnet worden.
             Ein Klick auf eine beliebige Position in der Karte bewirkt jetzt,
             dass die Zelle in der Karte markiert und der zugehörige Maximalwert
             der Wassertiefe bzw. der Fließgeschwindigkeit in diesem Feld
@@ -36,7 +60,7 @@ const Component = () => {
               Varianz der Simulationsergebnisse
             </a>{" "}
             zu verdeutlichen. Aus demselben Grund werden berechnete Wassertiefen
-            von mehr als 150 cm nur als "> 150 cm" angezeigt. Bitte beachten
+            von mehr als 100 cm nur als "&gt; 100 cm" angezeigt. Bitte beachten
             Sie, dass in der online-Karte Wassertiefen kleiner als 5 cm
             transparent dargestellt sind, um die Aufmerksamkeit auf die
             kritischeren Bereiche zu lenken. Überflutungsgefahren können auch in
@@ -44,8 +68,8 @@ const Component = () => {
             prüfen (inkl. der Grundstücksentwässerungsanlage). Die Anzeige der
             maximalen Fließgeschwindigkeiten erfolgt in der Einheit "Meter pro
             Sekunde" (m/s), gerundet auf eine Nachkommastelle.
-            Fließgeschwindigkeiten von mehr als 6 Meter pro Sekunde werden als
-            "> 6 m/s" angezeigt.
+            Fließgeschwindigkeiten von mehr als 1 Meter pro Sekunde werden als
+            "&gt; 1 m/s" angezeigt.
           </p>
           <p>
             <b>Tipp für die Abfrage der maximalen Fließgeschwindigkeiten:</b>{" "}
@@ -59,14 +83,7 @@ const Component = () => {
             zellenscharf angezeigt.
           </p>
           <p>
-            Auch im Abfragemodus können Sie die Karte mit gedrückter linker
-            Maustaste verschieben. Wenn Sie auf diese Weise oder durch{" "}
-            <a onClick={() => setAppMenuActiveMenuSection("positionieren")}>
-              Positionierung über einen Suchbegriff
-            </a>{" "}
-            einen Kartenausschnitt auswählen, in dem die zuletzt abgefragte
-            Zelle nicht mehr enthalten ist, wird das Anzeigefeld auf seinen
-            Startzustand zurückgesetzt. Mit einem Klick auf das{" "}
+            Mit einem Klick auf das{" "}
             <Icon name="close" /> Symbol rechts oben im Anzeigefeld beenden Sie
             den Abfragemodus.
           </p>
@@ -74,5 +91,6 @@ const Component = () => {
       }
     />
   );
+
 };
 export default Component;
