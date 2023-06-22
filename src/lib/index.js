@@ -8,7 +8,6 @@ import {
 } from "@cismet-collab/rainhazardmaps-base-texts";
 
 import Help10AllgemeineHinweise from "./help/Help10AllgemeineHinweise";
-import Help15Datengrundlage from "./help/Help15Datengrundlage";
 import Help20Karteninhalt from "./help/Help20Karteninhalt";
 import Help30InKartePositionieren from "./help/Help30InKartePositionieren";
 import Help40MeinStandort from "./help/Help40MeinStandort";
@@ -29,7 +28,6 @@ const getCollabedHelpComponentConfig = ({
   const menuTitle = "Kompaktanleitung und Hintergrundinformationen";
   const menuSections = [
     <Help10AllgemeineHinweise key="AllgemeineHinweise" />,
-    <Help15Datengrundlage key="Datengrundlage" />,
     <Help20Karteninhalt key="Karteninhalt" />,
     <Help30InKartePositionieren key="InKartePositionieren" />,
     <Help40MeinStandort key="MeinStandort" />,
