@@ -23,14 +23,14 @@ const Component = ({ defaultContextValues = {}, email }) => {
             Wenn die Simulationsergebnisse eine Überflutungsgefährdung
             darstellen, die im Widerspruch zu Ihren vor Ort gewonnen Erfahrungen
             steht, liegt das wahrscheinlich an einem Fehler oder einer
-            Ungenauigkeit im Digitalen Geländemodell (DGM), welches der
-            Simulationsberechnung zugrundeliegt. Woher kommen solche Fehler? Das
+            Ungenauigkeit im Digitalen Geländemodell (DGM), das bei der
+            Simulationsberechnung verwendet wird. Woher kommen solche Fehler? Das
             DGM wird aus Höhenmessungen abgeleitet, die mit einem Laserscanner
             aus einem Flugzeug heraus durchgeführt werden. Bei diesem
             Messverfahren werden Brücken, Tunnel und Gewässerdurchlässe, die für
             das Abflussverhalten des Oberflächenwassers wichtig sind, nicht
-            erkannt. Sie müssen daher nachträglich manuell in das DGM
-            eingearbeitet werden. Wenn dabei ein für den Abfluss sehr wichtiges
+            erkannt. Sie werden daher nachträglich manuell in das DGM
+            eingearbeitet. Wenn dabei ein für den Abfluss sehr wichtiges
             Element übersehen wurde, wird u. U. in der Simulationsberechnung aus
             einer Brücke ein Damm. Im Ergebnis wird dann eine Aufstauung des
             Wassers angezeigt, die sich im Gelände so nicht einstellen würde!
@@ -47,7 +47,7 @@ const Component = ({ defaultContextValues = {}, email }) => {
             Geländemodell melden" <Icon name="comment" /> links oben im
             Kartenfenster öffnen Sie das auf Ihrem Rechner eingerichtete
             E-Mail-Programm mit dem Gerüst einer Nachricht an{" "}
-            <a href="mailto:starkregen@cismet.de">starkregen@cismet.de</a>. Über
+            <a href="mailto:starkregen@emsdetten.de">starkregen@emsdetten.de</a>. Über
             diese Funktionsadresse sprechen Sie eine Gruppe von Experten:innen
             an. Das automatisch erzeugte E-Mail-Gerüst enthält einen Link, mit
             dem diese Experten:innen die Starkregengefahrenkarte genau in dem
