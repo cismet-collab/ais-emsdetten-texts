@@ -15,136 +15,97 @@ const Component = () => {
       sectionContent={
         <div>
           <p>
-            Die Starkregengefahrenkarte zeigt die Ergebnisse von Simulationen,
-            die dem heutigen Stand der Technik entsprechen. Die Berechnungen
-            basieren auf einem vereinfachten Modell der tatsächlichen
+            Die Berechnungen basieren auf einem vereinfachten Modell der tatsächlichen
             Verhältnisse, mit dem sich kritischere Bereiche jedoch gut bestimmen
-            lassen. Für eine noch differenziertere Modellierung müssten höher
-            aufgelöste Geländedaten sowie detailliertere hydrologischen
-            Grundlagen vorliegen und kleinräumige Strukturen wie Gartenmauern
-            detailliert eingearbeitet werden.{" "}
+            lassen. Für eine noch differenziertere Modellierung fehlen derzeit 
+            noch genauere Geländedaten und Daten kleiner Strukturen (Gartenmauern, Grundstücksentwässerung etc.).
           </p>
 
           <p>Was sind die wichtigsten Annahmen, die getroffen wurden?</p>
 
           <ul>
             <li>
-              Abfließendes Regenwasser findet in Kellergeschossen oder
-              Tiefgaragen ein Rückhaltevolumen, das nicht berücksichtigt werden
-              konnte. Hierzu fehlen weitergehende Daten. Zudem sind die
+              Abfließendes Regenwasser findet in Kellergeschossen ein Rückhaltevolumen, 
+              das nicht berücksichtigt werden konnte. Zudem sind die
               Verhältnisse in den Gebäuden aufgrund der unbekannten Ein- und
               Austrittspunkte auch noch nicht modellierbar.
             </li>
 
             <li>
               Variable Anteile des Regenwassers versickern oder verdunsten in
-              der Realität. Für die Simulationen wurden räumlich verteilte
-              Versickerungseffekte angesetzt. Die Versickerung ist jedoch stark
-              von den Ausgangsbedingungen abhängig. Hat es bpsw. vor einem
-              Starkregen bereits geregnet, versickert weniger Wasser. Ist der
-              Boden andersherum zu trocken, ist die Anfangsinfiltration sehr
-              gering, d. h. dass auch dann zunächst weniger Wasser versickert
-              und mehr Wasser abflusswirksam wird. Insbesondere in den nicht
-              befestigten Außenbereichen sind diese Variationen und
-              Einflussmöglichkeiten zu berücksichtigen. Weitere hydrologische
-              Prozesse, z. B. Interzeption, werden nicht berücksichitgt. Die
-              Verdunstung spielt bei den hier betrachteten kurzen Niederschlägen
-              nur eine untergeordnete Rolle.
+              der Realität. In den dargestellten Berechnungen wurden pauschale
+              Versickerungseffekte für befestigte und unbefestigte Flächen angesetzt. 
+              Die Versickerung ist jedoch stark
+              von den Ausgangsbedingungen abhängig. Hat es vor einem
+              Starkregen bereits geregnet, versickert weniger Wasser. 
+              Insbesondere in den nicht
+              befestigten Außenbereichen sind diese Variationen daher zu betrachten.
+              Die Verdunstung spielt bei den hier betrachteten kurzen Niederschlägen
+              nur eine sehr untergeordnete Rolle.
             </li>
 
             <li>
-              In Abhängigkeit der Flächennutzung wurden verschiedene Rauheiten
-              angesetzt. Dies führt zu unterschiedlichen
-              Abflussgeschwindigkeiten auf den Oberflächen. Auf land- und
-              forstwirtschaftlich genutzten Flächen sowie Grünflächen läuft das
+              In Abhängigkeit der Flächennutzung (un-/befestigter Boden; Straße; Dach) 
+              wurden verschiedene Rauheiten angesetzt. Dies führt zu unterschiedlichen
+              Abflussgeschwindigkeiten auf den Oberflächen. Auf Grünflächen beispielsweise läuft das
               Oberflächenwasser aufgrund der Vegetation langsamer ab. Im
               Gegensatz dazu läuft auf befestigen Flächen wie Straßen das
               Regenwasser schneller ab.
+              Auch die Oberflächenrauheiten können auf Grund von Umgebungsbedingungen beeinflusst werden.
             </li>
 
             <li>
-              Das Kanalnetz wurde vereinfacht über einen Verlustansatz
-              berücksichtigt. Zu detaillierten Wirkungen von Abflüssen innerhalb
-              des Kanalnetzes liegen in den Kommunen ggf. gesonderte
-              Fachberechnungen vor. Die dargestellten Starkregen zeichnen sich
-              durch hohe Regenintensitäten oberhalb der Bemessungsgrenze des
-              Kanalnetzes aus. Über das Kanalnetz kann zwar ein gewisses
-              Niederschlagsvolumen aufgenommen und abgeführt werden, allerdings
-              sind die Kanalnetze nicht für die dargestellten Starkregen
-              dimensioniert und müssen es auch nicht sein. Daher fließen bei den
-              dargestellten Starkregen große Anteile oberirdisch ab oder können
-              nicht mehr in das Kanalnetz eintreten.
+              Die Starkregengefahrenkarte Emsdetten geht aus der Bearbeitung des Generalentwässerungsplans Emsdetten hervor. Hierbei werden
+              sämtliche an die öffentliche Kanalisation angeschlossene Flächen des Stadtgebietes als Einzugsgebiete berücksichtigt. 
+              Außenbereiche z.B. landwirtschaftliche Flächen, die nicht an das öffentliche Kanalnetz angeschlossen sind, werden daher 
+              nicht in der Simulation berücksichtigt. In der Starkregengefahrenkarte werden die städtischen Abflussprozesse zum Gewässer 
+              hin untersucht. Hochwasserbetrachtungen mit großräumigen hydrologischen Einzugsgebieten wurden nicht durchgeführt. 
+              Entsprechende Hochwassergefahrenkarten des Landes NRW sind ergänzend zu berücksichtigen.
+            </li>
+ 
+            <li>
+              Aufgrund der getroffenen Annahmen an den Modellrändern des kanalisierten Einzugsgebietes können an den Grenzen 
+              höhere/niedrigere Darstellungen der Gefährdungen auftreten. In diesen Randbereichen sind ggf. Detailbetrachtungen 
+              erforderlich.
+            </li>
+
+            <li>
+            Das Kanalnetz wurde als „Ableitungselement“ im Modell mit Kopplungen zwischen Oberfläche und Kanal über Austauschelemente 
+            berücksichtigt. Als Schnittstelle wurden Schächte definiert. Weitere Austauschelemente wie alle Straßeneinläufe im gesamten 
+            kanalisierten Stadtgebiet konnten nicht berücksichtigt werden. Die dargestellten Starkregen zeichnen sich durch hohe Regenintensitäten 
+            oberhalb der Bemessungsgrenze des Kanalnetzes aus. Über das Kanalnetz kann zwar eine gewisse Menge an Regenwasser aufgenommen
+            und abgeführt werden, allerdings fließen bei den dargestellten Starkregen große Anteile oberirdisch ab oder können nicht mehr 
+            in das Kanalnetz eintreten.
             </li>
           </ul>
 
           <p>
-            <strong>
-              Die Modellannahmen, die stadtgebietsweite Niederschlagsbelastung
-              und Fehler im Geländemodell können dazu führen, dass es zu
-              Abweichungen zwischen den Simulationsergebnissen und beobachteten
-              Überflutungen infolge von Starkregen kommen kann. Niederschläge
-              der Stufe SRI 7 bzw. 9/10 können daher je nach Randbedingungen in
-              der Realität auch etwas geringere oder höhere Wassertiefen auf der
-              Geländeoberfläche zur Folge haben.
-            </strong>{" "}
-            Die unterschiedlichen Betroffenheiten im Stadtgebiet lassen sich
-            aber sehr gut mit den Ergebnisdarstellungen aufzeigen. Die
-            dargestellten Szenarien (außergewöhnliches und extremes
-            Starkregenereignis) zeigen eine mögliche Spannweite der
-            Überflutungen im Modell auf. Je nach Betroffenheit und
-            Schadenspotential lassen sich auf dieser Grundlage Vorsorgemaßnahmen
-            bewerten.
+          Die Modellannahmen, die Niederschlagsbelastung im kanalisierten Stadtbereich und Fehler im Geländemodell führen dazu, dass es 
+            zu Abweichungen zwischen den Simulationsergebnissen und beobachteten Starkregen kommen kann. Niederschläge der Stufe SRI 7 
+            bzw. 8 können daher je nach Randbedingungen und Niederschlagsverteilung in der Realität auch etwas geringere oder höhere 
+            Wassertiefen zur Folge haben. Beobachtete Starkregenereignisse mit einer ähnlichen Niederschlagssumme können deutliche 
+            Unterschiede im Intensitätsverlauf haben. Damit geht auch ein differenzierter zeitlicher Verlauf der Ereignisse einher. 
+            Die unterschiedlichen Betroffenheiten im Stadtgebiet lassen sich aber sehr gut mit den Ergebnisdarstellungen aufzeigen. 
+            Die beiden Szenarien (außergewöhnliches und extremes Starkregenereignis) zeigen eine mögliche Spannweite der Überflutungen 
+            im Modell auf. Je nach Betroffenheit und Schadenspotential lassen sich auf dieser Grundlage Vorsorgemaßnahmen bewerten.
           </p>
 
           <p>
-            <strong>
-              {" "}
-              Bitte berücksichtigen Sie, dass die Ergebnisse des dritten
-              Szenarios (Simulation des Extremereignisses vom 14. Juli 2021)
-              nicht unmittelbar mit den Ergebnissen der Modellregen (Szenario 1
-              und 2) verglichen werden können.{" "}
-            </strong>{" "}
-            Das Niederschlagsereignis im Juli 2021 war ein Ausnahmeereignis,
-            welches aus infolge vieler Randbedingungen und Umstände entstanden
-            ist. Alle Randbedingungen können im Modell nicht abgebildet werden.
-            Die Simulationsergebnisse jenes Niederschlages basieren entsprechend
-            lediglich auf der Grundlage des Niederschlagsverlaufes, der damals
-            stattgefunden hat. Weitere hydrologische Grundlagen, wie bspw.
-            Hochwassereinflüsse oder besondere Umstände, die bspw. zu Zerstörung
-            von Brücken oder Gebäuden geführt haben, können nicht abgebildet
-            werden und die Ergebnisse beeinflussen. Bereiche in der Nähe großer
-            Gewässer oder jener Gewässer, die unter besonderem
-            Hochwassereinfluss stehen können, sollten grundsätzlich nur unter
-            Hinzunahme und Berücksichtigung der geltenden
-            Hochwassergefahrenkarten, welche in einem Layer in der Darstellung
-            ergänzt werden können, interpretiert werden. Weiterhin ist zu
-            bedenken, dass das für die Simulation verwendete Geländemodell aus
-            Befliegungsdaten stammt, die nach der Flut aufgenommen wurden. Auch
-            hier können daher Differenzen zwischen den Simulationsergebnissen
-            und den damaligen Folgen und Geschehnissen auftreten. Bereiche, in
-            denen infolge der Flut derzeit große, für das Abflussgeschehen
-            bedeutsame Maßnahmen in Umsetzung sind, werden daher in der Karte
-            mit einem extra Layer abgedeckt, um Irritationen und
-            Missverständnisse zu vermeiden. Wir möchten betonen, dass der Fokus
-            dieser Karte auf der Starkregenvorsorge liegt und nicht auf der
-            Reproduktion bzw. Imitation des realen Ereignisses von 2021.
-          </p>
-          <p>
-            Da nicht alle kleinräumigen Strukturen im Digitalen Geländemodell
-            (DGM1), das vom Land NRW zur Verfügung gestellt und für die
-            Simulationen verwendet wird, abgebildet werden können, bitten wir
-            Sie, dabei zu helfen, das DGM sukzessive zu verbessern, indem Sie
-            vermutete{" "}
+            Auch das Digitale Geländemodell, das vom Land NRW zur Verfügung gestellt, in ein
+            Dreiecks-Rechennetz überführt und für die Simulationen verwendet wird, 
+            kann vereinzelt noch Fehler aufweisen oder kleinste Strukturen nicht richtig erfassen.
+            Helfen Sie dabei, das DGM sukzessive zu verbessern, indem Sie vermutete{" "}
             <a
               onClick={() => setAppMenuActiveMenuSection("modellfehlermelden")}
             >
               Fehler im Geländemodell melden
             </a>
-            ! Bedenken Sie, dass es sein kann, dass ein neues Gebäude in den
+            ! Zuletzt kann es sein, dass ein neues Gebäude in den
             Simulationen nicht berücksichtigt wurde, weil es zum Zeitpunkt der
             Datenbereitstellung für die Simulationsberechnungen noch nicht im
             Liegenschaftskataster nachgewiesen war oder ggf. ein Gebäude
             inzwischen abgerissen wurde.
+            Auch bei der Gebäudezuordnung (Nutzung) können Diskrepanzen auftreten.
           </p>
         </div>
       }
