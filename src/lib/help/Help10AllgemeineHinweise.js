@@ -23,77 +23,113 @@ const Component = () => {
             align="right"
           />
           <p>
-            Die Starkregengefahrenkarte im AIS Starkregenvorsorge stellt in drei
+            Die Starkregengefahrenkarte im "AIS Starkregenvorsorge Emsdetten" stellt in zwei
             umschaltbaren Kartenansichten maximale Wassertiefen bzw. maximale
-            Fließgeschwindigkeiten im gesamten Gültigkeitsgebiet dar, die im
-            Verlauf von drei simulierten Starkregenszenarien berechnet wurden.
-            Bei den Ergebnissen handelt es sich um eine modelltechnische
-            Untersuchung des Gültigkeitsgebiets mit dem Ziel die Realität
-            möglichst gut abzubilden. Bei der Betrachtung und Interpretation der
-            Ergebnisse sind die Modellgrundlagen und -annahmen zu
-            berücksichtigen. Hinweise zur Aussagekraft der Ergebnisse werden
-            nachfolgend beschrieben.
-          </p>
-
-          <p>
-            Das Ergebnis der Simulation ist von der Dauer und Intensität des
-            Regens abhängig, der für die Simulation angenommen wird. Wir bieten
-            Ihnen hierzu drei unterschiedliche{" "}
+            Fließgeschwindigkeiten im kanalisierten Einzugsgebiet der Stadt dar. Grundlage bilden
+            zwei{" "}
             <a
-              className="renderAsLink"
-              onClick={() => setAppMenuActiveMenuSection("szenarien")}
+            className="renderAsLink"
+            onClick={() => setAppMenuActiveMenuSection("szenarien")}
             >
-              simulierte Szenarien
+            simulierte Szenarien
             </a>{" "}
-            an, darunter ein außergewöhnlicher Starkregen (SRI 7) und ein
-            extremer Starkregen (SRI 9 bzw. 10) als "Modellregen" sowie die
-            Abbildung der Niederschlagsbelastung des Ereignisses vom 14.07 und
-            15.07.2021, basierend auf Radardaten.{" "}
+            , ein Starkregen (SRI 7) als "Modellregen" sowie ein
+            extremer Starkregen (SRI 8) aus lokal gemessenen Regenhöhen der Station St. Arnold (LANUV),
+            die auf ganz Emsdetten angewendet wurden.
           </p>
 
           <p>
-            Der Farbverlauf für die <strong>Wassertiefen</strong> nutzt die
-            Eckwerte 20 cm (blau), 40 cm (gelb), 75 cm (orange) und {">"} 100 cm
-            (rot). Wassertiefen unter 5 cm werden nicht mehr farbig ausgeprägt
-            (transparente Darstellung). Zur Visualisierung der{" "}
-            <strong>Fließgeschwindigkeiten</strong>, angegeben in Meter pro
-            Sekunde (m/s), werden die Eckwerte 0,5 m/s (gelb), 2,0 m/s (orange),
-            4,0 m/s (hellrot) und 6,0 m/s (dunkelrot) verwendet. Der untere
-            Grenzwert für die farbige Anzeige einer Fließgeschwindigkeit liegt
-            bei 0,2 m/s.
+            Die Simulationsberechnungen wurden im Auftrag der Stadt Emsdetten im Rahmen der generellen Entwässerungsplanung durch das Ingenieurbüro
+            Dr. Pecher AG (Erkrath) durchgeführt. <strong>Grundlagen der Simulationsberechnungen:</strong>
+          </p>
+
+          <ul>
+            <li>Digitales Geländemodell (DGM2) für das kanalisierte Einzugsgebiet der Stadt Emsdetten
+            (flächenhafte Höhenmessungen durch das Land NRW im Jahr 2014)</li>
+            <li>Gebäude aus dem Liegenschaftskataster der Stadt Emsdetten (Stand: 02/2016)</li>
+            <li>Gekoppeltes Kanalnetz- und Oberflächenabflussmodell (bidirektionale Kopplung)
+            <br/>Schnittstellen zwischen Oberfläche und Kanalnetz definieren die Schächte des
+            Kanalnetzes (Simulationssoftware DYNA/GeoCPM ®)</li>
+            <li>Gewässerverrohrungen und Durchlässe (nur in Kombination mit dem Kanalnetz)</li>
+            <li>Unterschiedliche Geländerauheiten und Versickerungsansätze für Geländeoberflächen</li>
+          </ul>
+
+          <p>
+            Zur Betrachtung der Ergebnisse stellen wir Ihnen drei verschiedene Hintergrundkarten bereit, die
+            auf den folgenden Geodatendiensten und Geodaten basieren. <strong>Grundlagen der Hintergrundkarten:</strong>
+          </p>
+
+          <ul>
+            <li>
+              <strong>Stadtplan (grau)</strong>: Kartendienst (vektorbasiert) der cismet GmbH.
+              Datengrundlage: <strong>cismet light</strong>. Wöchentlich in einem automatischen
+              Prozess aktualisierte Bereitstellung der OpenStreetMap als Vektorlayer mit der
+              OpenMapTiles-Server-Technologie. Lizenzen der Ausgangsprodukte:{" "}
+              <a
+                target='_legal'
+                href='https://github.com/openmaptiles/openmaptiles/blob/master/LICENSE.md'
+              >
+                Openmaptiles
+              </a>{" "}
+              und{" "}
+              <a target='_legal' href='https://www.opendatacommons.org/licenses/odbl/1.0/'>
+                ODbL
+              </a>{" "}
+              (OpenStreetMap contributors).
+            </li>
+            <li>
+              <strong>Luftbildkarte</strong>: (1) Kartendienst (WMS) des Landes NRW. Datengrundlage:{" "}
+              <strong>Digitale Orthophotos (DOP) des Landes NRW</strong> WMS-Dienst für farbige,
+              digitale, georeferenzierte, lagegenaue, entzerrte Luftbilder des Landes NRW. (
+              <a
+                target='_legal'
+                href='https://www.bezreg-koeln.nrw.de/brk_internet/geobasis/luftbildinformationen/aktuell/digitale_orthophotos/index.html'
+              >
+                weitere Informationen
+              </a>
+              ). (2) Kartendienste (WMS) des Regionalverbandes Ruhr (RVR). Datengrundlagen:{" "}
+              <strong>Stadtkarte 2.0.</strong> Wöchentlich in einem automatischen Prozess aktualisierte Zusammenführung
+              des Straßennetzes der OpenStreetMap mit Amtlichen Geobasisdaten des Landes NRW aus den Fachverfahren
+              ALKIS (Gebäude, Flächennutzungen) und ATKIS (Gewässer). © RVR und Kooperationspartner (Datenlizenz 
+              Deutschland - Namensnennung - Version 2.0). Lizenzen der Ausgangsprodukte: Datenlizenz Deutschland 
+              - Zero - Version 2.0 (Amtliche Geobasisdaten) und ODbL (OpenStreetMap contributors).
+            </li>
+            <li>
+              <strong>DTK (bunt)</strong>: DTK Sammeldienst des Landes NRW. Datengrundlage:{" "}
+              <strong>DTK (bunt)</strong>. Dieser Dienst enthält alle topographischen Kartenwerke des
+              Landes Nordrhein-Westfalen sowie in den kleineren Maßstäben topographische Kartenwerke
+              des Bundes. Angefangen von einer Übersichtskarte für NRW über die DTK500 bis zur
+              DTK250 des Bundesamtes für Kartographie und Geodäsie und den topographischen Karten
+              DTK100, DTK50, DTK25, DTK10 NRW von Geobasis NRW, bis hin zur ABK und ALKIS der
+              Kommunen sind alle Standardkartenwerke in einem Layer vereint. Durch die
+              voreingestellten Maßstabsbereiche wird gewährleistet, dass in jedem Maßstab die ideale
+              Karte präsentiert wird. Nutzungsbedingungen: siehe{" "}
+              <a
+                target='_legal'
+                href='http://www.bezreg-koeln.nrw.de/brk_internet/geobasis/lizenzbedingungen_geobasis_nrw.pdf'
+              >
+                Nutzungsbedingungen Geobasis NRW
+              </a>
+              , Für die DTK 250, DTK 500 gelten die Nutzungsbedingungen des BKG: ©{" "}
+              <a target='_legal' href='www.govdata.de/dl-de/by-2-0'>
+                GeoBasis-DE / BKG(2020) dl-de/by-2-0
+              </a>
+            </li>
+          </ul>
+
+          <p>
+            Da die Hintergrundkartendienste immer wieder aktualisiert werden, kann es in Einzelfällen zu geringen 
+            Abweichungen zu der Datengrundlage des Simulationsmodells kommen, bis dieses ebenfalls mit den neuen 
+            Gebäuden/Objekten fortgeschrieben wird.
           </p>
 
           <p>
-            Die Simulationsberechnungen wurden im Auftrag durch das
-            Ingenieurbüro Dr. Pecher AG (Erkrath/Gelsenkirchen) durchgeführt.
+            Das Auskunfts- und Informationssystem (AIS) Starkregenvorsorge ist im Rahmen des
+            DBU-Projektes KLAS in Bremen entwickelt und seitdem ergänzt worden.
           </p>
+          
 
-          <p>
-            Das Auskunfts- und Informationssystem (AIS) Starkregenvorsorge ist
-            im Rahmen des DBU-Projektes KLAS in Bremen entwickelt und seitdem
-            ergänzt worden.
-          </p>
-
-          <p>
-            Die Bemessungsgrenze des Kanalnetzes wird bei den hier simulierten
-            Ereignissen überschritten. Der größte Anteil des Niederschlagwassers
-            fließt oberirdisch ab, wobei im urbanen Raum sowohl die
-            Leistungsfähigkeit des Kanalnetzes als auch der Überstau des
-            Kanalnetzes einen Einfluss auf die Überflutungssituation haben kann.
-            Das Abflussverhalten des Kanalnetzes wurde durch eine kombinierte
-            Betrachtung berücksichtigt. Die Eigenschaften der Geländeoberfläche
-            variieren je nach Flächennutzung. Die verschiedenen
-            Oberflächeneigenschaften wurden im Modell über unterschiedliche
-            Geländerauheiten und zeitlich variable Versickerungsansätze
-            abgebildet. Relevante Retentionsräume sowie Gewässerverrohrungen und
-            Durchlässe wurden aufgrund ihrer Bedeutung für die Ableitungs- und
-            Speicherwirkung von Oberflächenwasser als Elemente in das Modell
-            aufgenommen. Je nach Regen und Randbedingungen in der Realität
-            können in Teilgebieten die Wassertiefen auf dem Gelände höher oder
-            geringer ausfallen. Um diese Variationen zu verstehen und besser
-            einschätzen zu können, sind die unterschiedlichen Szenarien
-            dargestellt.
-          </p>
+          
         </div>
       }
     />
