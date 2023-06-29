@@ -3,7 +3,7 @@ import GenericModalMenuSection from "react-cismap/topicmaps/menu/Section";
 import cismetLogo from "./assets/cismetSignet2k.png";
 import pecherLogo from "./assets/pecher.png";
 import klasLogo from "./assets/Signet_AIS_RZ.png";
-import customerLogo from "./assets/customerLogo.png";
+import customerLogo from "./assets/Logo_Stadt_Emsdetten.jpg";
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
 const Component = ({ email }) => {
@@ -22,24 +22,22 @@ const Component = ({ email }) => {
 
           <p style={{ display: "flex" }}>
             <div>
-              Stadt
+              Stadt Emsdetten
               <br />
-              Abteilung
+              Am Markt 1
               <br />
-              Straße
+              48282 Emsdetten
               <br />
-              PLZ Stadt
-              <br />
-              Telefon: 0000 000000
+              Telefon: 02572 922-0
               <br />
               E-Mail: <a href="mailto:{email)}">{email}</a>
               <br />
             </div>
             <img
-              style={{ marginBottom: 10, marginLeft: 20 }}
+              style={{ marginBottom: 0, marginLeft: 100 }}
               target="_contacts"
               alt="Logo Auftraggeber"
-              height="150"
+              height="120"
               src={customerLogo}
             />
           </p>
@@ -48,11 +46,11 @@ const Component = ({ email }) => {
             <tbody>
               <tr>
                 <td style={{ textAlign: "left", paddingBottom: 20 }}>
-                  <strong>Bearbeitung des Starkregenrisikomanagement</strong>
+                  <strong>Bearbeitung Starkregengefahrenkarten</strong>
                 </td>
                 <td style={{ textAlign: "left", paddingBottom: 20 }}>
                   <strong>
-                    Aufbau und Bereitstellung AIS Starkregenvorsorge
+                    Aufbau und Bereitstellung
                   </strong>
                 </td>
                 <td style={{ textAlign: "left", paddingBottom: 20 }}>
