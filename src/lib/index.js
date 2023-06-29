@@ -43,6 +43,19 @@ const getCollabedHelpComponentConfig = ({
       version={version}
       reactCismapRHMVersion={reactCismapRHMVersion}
       logoUrl={footerLogoUrl}
+      taglineModelling={
+        <div>
+          <b>Modellierung (2016) und AIS Starkregenvorsorge</b> (Version 1.0 |
+          07/2023):{" "}
+          <a target="_wsw" href="https://cismet.de/">
+            cismet GmbH
+          </a>{" "}
+          |{" "}
+          <a target="_pecher" href="https://www.pecher.de/">
+            Dr. Pecher AG (Gelsenkirchen/Erkrath)
+          </a>
+        </div>
+      }
     />
   );
   return {
